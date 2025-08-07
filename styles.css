@@ -1,4 +1,104 @@
+
+.bh, .bh1, .bh3, .bh4, .bh5 {
+    filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.8));
+}
+
+
 *{
-    padding: 0%;
-    margin: 0%;
+    margin: 0;
+    padding: 0;
+}
+
+@font-face{
+  font-family:'Pixel';
+  src: url('font.ttf') format('truetype');
+}
+
+@keyframes slideInFromTop {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+body{
+    background: url(this.jpg) no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+h1{
+    font-family: Pixel;
+    color: rgb(255, 145, 0);
+    position: static;
+    text-align: center;
+    font-size: 8vh;
+    margin-top: 15vh;
+    animation: slideInFromTop 5s ease-out forwards;
+}
+
+.bh {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 384px;
+  transform: translateY(-50%);
+  animation: floatSideways 12s linear infinite alternate;
+}
+
+.bh1 {
+  position: absolute;
+  top: 80%;
+  left: 90%;
+  width: 384px;
+  transform: translateY(-100%);
+  animation: floatSideways 6s linear infinite alternate;
+}
+
+.bh2 {
+  position: absolute;
+  top: 80%;
+  left: 90%;
+  width: 384px;
+  transform: translateY(-100%);
+  animation: floatSideways 6s linear infinite alternate;
+}
+@keyframes floatSideways {
+  0% {
+    left: 0;
+    transform:
+      translateY(-50%)
+      translateX(0)
+      skew(0deg, 0deg)
+      rotate(-10deg)
+      scale(2)
+      scaleY(1);
+  }
+
+  50% {
+    left: 50%;
+    transform:
+      translateY(-50%)
+      translateX(-50%)
+      skew(0deg, 0deg)
+      rotate(0deg)
+      scale(1)
+      scaleY(1);
+  }
+
+  100% {
+    left: calc(100vw - 384px);
+    transform:
+      translateY(-50%)
+      translateX(0)
+      skew(0deg, 0deg)
+      rotate(10deg)
+      scale(2)
+      scaleY(1);
+  }
 }
